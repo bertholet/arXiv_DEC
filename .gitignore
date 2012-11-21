@@ -1,0 +1,8 @@
+Imgs/*
+*.aux
+*.bbl
+*.blg
+*.log
+*.dvi
+*.toc
+*.ps

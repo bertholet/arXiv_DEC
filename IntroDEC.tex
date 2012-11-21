@@ -1,0 +1,126 @@
+\documentclass[a4paper]{scrbook}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[english]{babel}
+
+\usepackage{natbib}
+\bibpunct{[}{]}{,}{a}{}{;}
+\usepackage{fancyheadings}
+\usepackage{iamdip}
+
+%\usepackage{tikz}
+%\usepackage{longtable}
+
+\headrulewidth 0.5pt \addtolength{\headheight}{5pt}
+
+\lhead[\fancyplain{}{\rm\thepage}]{\fancyplain{}{\rightmark}}
+\rhead[\fancyplain{}{\leftmark}]{\fancyplain{}{\rm\thepage}}
+\cfoot{}
+
+
+%%%%%%%%%%%%%%%%%%%%% Environments and commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{abstract}%
+    {\cleardoublepage\thispagestyle{empty}\null\vfill\begin{center}%
+    \bfseries\abstractname\end{center}}%
+    {\vfill\null}
+    
+\newenvironment{acknowledgements}%
+    {\cleardoublepage\thispagestyle{empty}\null\vfill\begin{center}%
+    \bfseries Acknowledgements\end{center}}%
+    {\vfill\null}
+
+
+\newenvironment{definition}[1][]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries Definition (#1)}]\begin{itshape}}{\end{itshape}\end{trivlist}}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+\newenvironment{packed_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newtheorem{thm}{Theorem}
+
+%\newcommand{\note}[1]{\textcolor{red}{\textit{(#1)}}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\discrete}[1]{\textbf{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\pagestyle{fancyplain} \thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%% Title page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{A First Introduction to Discrete Exterior Calculus}
+\author{Peter Bertholet}
+\betreuer{Claude Knaus \\ Prof. Dr. Matthias Zwicker }
+\ort{Bern}
+\datum{2012}
+\pagenumbering{roman} \setcounter{page}{1}
+	\maketitle
+	
+\input{Chapters/abstract.tex}
+
+\pagenumbering{roman} \setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%% Acknowledgments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{acknowledgements}
+I would like to thank Claude Knaus for the long discussions, the good suggestions and the competent supervision of this thesis. I also greatly thank Professor Matthias Zwicker for giving me the opportunity to get acquainted with discrete differential forms, and for his valuable feedback.  Also I wish to thank Gian Calgeer, Marco Manzi and Patrik Rauber for telling me on a regular basis not to get lost in details, and for making the time I worked on this thesis much more fun. Finally, I owe many thanks to my parents for their unwavering support and for giving me the possibility to take this masters course.
+\end{acknowledgements}
+
+	
+\pagenumbering{roman} \setcounter{page}{1}
+\tableofcontents
+	
+\pagenumbering{arabic} \setcounter{page}{1}
+\pagestyle{fancy}
+	
+\input{Chapters/Intro.tex}
+
+
+\input{Chapters/BasicObjects.tex}	
+
+%\newpage
+\input{Chapters/DifferentialForms.tex}
+
+%\newpage		
+\input{Chapters/DifferentialCalculus.tex}
+
+%newpage		
+\input{Chapters/MeshParametrization.tex}
+
+\newpage	
+\input{Chapters/VectorfieldDesign.tex}
+\newpage
+\input{Chapters/FluidSim.tex}
+\input{Chapters/Discussion.tex}
+	
+\input{Chapters/Appendix.tex}
+	
+	\addcontentsline{toc}{chapter}{\numberline{}Bibliography}
+	%\nocite{*}
+	\bibliographystyle{alphadin}
+	\bibliography{chapters/thesis}
+	
+\end{document}
